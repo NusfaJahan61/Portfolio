@@ -5,29 +5,73 @@ import { MdVerifiedUser } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { FaPhone } from "react-icons/fa6";
+import { FaChevronLeft } from "react-icons/fa";
+import { CiDark } from "react-icons/ci";
+import { CiLight } from "react-icons/ci";
+import { MY_INFO } from "../assets/assets";
 
 const Navbar = () => {
   return (
-    <nav className='bg-teal-900 h-15 w-screen xl:w-[20dvw] xl:h-screen flex xl:flex-col justify-start items-center p-4'>
-      <div className="">
-        <img src="" alt="" />
-        <h1 className='text-3xl uppercase text-[#E9E9E0]'>Nusfa Jahan</h1>
-        <p>Hey! I'm a professional Front-end Web Developer</p>
+    <aside className="navbar ">
+
+      {/* ----------SIDEBAR HEADER---------- */}
+
+      <div className="sidebarheader">
+        <img className="rounded-full size-50 object-cover shadow-xl" src={MY_INFO.picture} alt="image" />
+        <h1>Nusfa Jahan Ikra</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, ut?</p>
+        <button><FaChevronLeft /></button>
       </div>
-      <div className="">
-        <a href="">Home</a>
-        <a href="">About Me</a>
-        <a href="">Projects</a>
-        <a href="">Portfolio</a>
-        <a href="">Contact</a>
-      </div>
-      <div className="mt-5 p-3 border-2 border-[#4fe3a5] shadow-sm shadow-[#4fe3a5] rounded-lg">
-        <h1>Feeling bored?</h1>
-        <h1>Let's guess the number between 0-100!</h1>
-        <input type="text" name="" id="" placeholder='Enter your number:' />
-        <button>enter</button>
-      </div>
-    </nav>
+
+      {/* ---------MENU OPTIONS---------- */}
+
+      <ul>
+        <li>
+          <a href="#">
+            <span><IoHome /></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span><IoHome /></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span><IoHome /></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span><IoHome /></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span><IoHome /></span>
+            <span>Home</span>
+          </a>
+        </li>
+      </ul>
+
+      {/* -------SIDEBAR FOOTER------- */}
+
+      <button>
+        <div className={``}>
+          <span>Dark Mode</span>
+          <span><CiDark /></span>
+        </div>
+        <div className={``}>
+          <span>Light Mode</span>
+          <span><CiLight /></span>
+        </div>
+      </button>
+
+    </aside>
   )
 }
 
