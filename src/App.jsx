@@ -13,3 +13,6 @@ const App = () => {
 }
 
 export default App
+
+
+// bg-[#e9e9e0]
