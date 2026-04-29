@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // ----------------React Icons----------------
 import { RxCross2 } from "react-icons/rx";
 import { FiMenu } from "react-icons/fi";
-import { CiHome } from "react-icons/ci";
+import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 import { LuUserRound } from "react-icons/lu";
 import { CiGrid42 } from "react-icons/ci";
@@ -34,9 +34,16 @@ const Navbar = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme)
     document.documentElement.classList.toggle("dark", newTheme === "dark")
+    localStorage.setItem("theme", newTheme);
   };
 
-  // ---------------------------------------------------State for sidebar toggle
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme(storedTheme);
+    document.documentElement.classList.toggle("dark", storedTheme === "dark");
+  }, [])
+
+  // ---------------------------------------------------State for Sidebar Toggle
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
@@ -51,13 +58,13 @@ const Navbar = () => {
   }
 
   return (
-    <aside className="navbar w-[20dvw] h-screen flex flex-col justify-between  bg-[#e9e9e0] shadow-xl shadow-teal-300 text-teal-800">
+    <aside className="navbar w-[20dvw] h-screen flex flex-col justify-between  bg-[#e9e9e0] dark:bg-slate-900 shadow-xl shadow-teal-300 text-teal-800 dark:text-teal-300">
 
       <div className="flex flex-col gap-5">
         {/* ----------SIDEBAR HEADER---------- */}
 
         <div className="sidebarheader flex flex-col justify-center items-center my-10 gap-2">
-          <img className="rounded-full size-40 object-cover shadow-sm shadow-teal-800" src={MY_INFO.picture} alt="image" />
+          <img className="rounded-full size-40 object-cover shadow-sm shadow-teal-800 dark:shadow-teal-300" src={MY_INFO.picture} alt="image" />
           <h1 className="text-2xl ">Nusfa Jahan Ikra</h1>
           <p className=" ">Hello! I'm a FrontEnd Web Developer.</p>
         </div>
@@ -67,7 +74,7 @@ const Navbar = () => {
         <ul className="p-5 flex flex-col gap-3 ">
           <li>
             <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 " href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out "><CiHome /></span>
+              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out "><IoHomeOutline /></span>
               <span className="">Home</span>
             </a>
           </li>
@@ -103,17 +110,17 @@ const Navbar = () => {
       </div>
 
       {/* -------MODE TOGGLE------- */}
-      <div className="bg-[#dadad1] flex flex-row items-center justify-between s px-5 ">
+      <div className="bg-[#dadad1] dark:bg-slate-800 flex flex-row items-center justify-between s px-5 ">
 
         <div className="flex items-center">
-          <button className="bg-[#e9e9e0] font-bold rounded-full text-2xl p-3 m-2 shadow-md  hover:scale-105 transition-all ease-in-out cursor-pointer active:bg-neutral-400" onClick={toggleTheme}>
+          <button className="bg-[#e9e9e0] dark:bg-slate-900 font-bold rounded-full text-2xl p-3 m-2 shadow-md  hover:scale-105 transition-all ease-in-out cursor-pointer active:bg-neutral-400" onClick={toggleTheme}>
             {theme === "light" ? <CiDark /> : <CiLight />}
           </button>
           <p className="ml-1 text-sm">{theme === "light" ? "Dark Mode" : "Light Mode"}</p>
         </div>
 
         <div className="flex justify-end m-3">
-          <button className="text-xl p-3 rounded-full bg-[#e9e9e0]" onClick={toggleMinimize}>{!minimize ? <FaChevronLeft /> : <FaChevronRight />}</button>
+          <button className="text-xl p-3 rounded-full bg-[#e9e9e0] dark:bg-slate-900 cursor-pointer" onClick={toggleMinimize}>{!minimize ? <FaChevronLeft /> : <FaChevronRight />}</button>
         </div>
       </div>
 
