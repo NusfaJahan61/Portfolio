@@ -15,6 +15,7 @@ import { CiLight } from "react-icons/ci";
 
 // ----------------Assets import----------------
 import { MY_INFO } from "../assets/assets";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -64,7 +65,9 @@ const Navbar = () => {
         {/* ----------SIDEBAR HEADER---------- */}
 
         <div className="sidebarheader flex flex-col justify-center items-center my-10 gap-2">
-          <img className="rounded-full size-40 object-cover shadow-sm shadow-teal-800 dark:shadow-teal-300" src={MY_INFO.picture} alt="image" />
+          <div className="profilePic">
+            <img className="rounded-full size-40 object-cover" src={MY_INFO.picture} alt="image" />
+          </div>
           <h1 className="text-2xl ">Nusfa Jahan Ikra</h1>
           <p className=" ">Hello! I'm a FrontEnd Web Developer.</p>
         </div>
@@ -72,38 +75,40 @@ const Navbar = () => {
         {/* ---------MENU OPTIONS---------- */}
 
         <ul className="p-5 flex flex-col gap-3 ">
-          <li>
-            <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 " href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out "><IoHomeOutline /></span>
+          <NavLink to='/'>
+            <a className={`navMenu`} href="#">
+              <span className="navIcon "><IoHomeOutline /></span>
               <span className="">Home</span>
             </a>
-          </li>
+          </NavLink>
 
-          <li>
-            <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 flex flex-row items-center justify-start gap-3 rounded-full p-3" href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out"><LuUserRound /></span>
+          <NavLink>
+            <a className=" navMenu" href="#">
+              <span className="navIcon"><LuUserRound /></span>
               <span>About Me</span>
             </a>
-          </li>
+          </NavLink>
 
-          <li>
-            <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 flex flex-row items-center justify-start gap-3 rounded-full p-3" href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out"><CiGrid42 /></span>
+          <NavLink>
+            <a className=" navMenu" href="#">
+              <span className="navIcon"><CiGrid42 /></span>
               <span>Projects</span>
             </a>
-          </li>
-          <li>
-            <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 flex flex-row items-center justify-start gap-3 rounded-full p-3" href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out"><MdOutlineVerifiedUser /></span>
+          </NavLink>
+          <NavLink>
+
+            <a className=" navMenu" href="#">
+              <span className="navIcon"><MdOutlineVerifiedUser /></span>
               <span>Certifications</span>
             </a>
-          </li>
-          <li>
-            <a className=" navMenu shadow-sm shadow-teal-700 active:bg-teal-700 flex flex-row items-center justify-start gap-3 rounded-full p-3" href="#">
-              <span className="rounded-full text-2xl p-2 shadow-md transition-all ease-in-out"><LuPhone /></span>
+          </NavLink>
+
+          <NavLink>
+            <a className=" navMenu" href="#">
+              <span className="navIcon"><LuPhone /></span>
               <span>Contact</span>
             </a>
-          </li>
+          </NavLink>
 
         </ul>
 

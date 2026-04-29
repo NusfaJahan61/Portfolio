@@ -7,3 +7,87 @@ body,
 #root {
   height: 100%;
 }
+
+@keyframes NavbarHoverEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navMenu {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+.navMenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, #0F4359, #1a8469, #0F4359);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+.navMenu:hover::before {
+  opacity: 1;
+  animation: NavbarHoverEffect 3s ease infinite;
+}
+
+.navMenu>* {
+  position: relative;
+  z-index: 1;
+}
+
+.profilePic {
+  background: #062c3d;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  height: 180px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePic::before,
+.profilePic::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: conic-gradient(from 0deg at center,
+      #0F4359,
+      #17c99d,
+      #1a8469,
+      #062c3d);
+  z-index: -2;
+  padding: 2px
+}
+
+.profilePic::after {
+  z-index: 1;
+  filter: blur(10px);
+
+}
+
+@layer components {
+  .navIcon {
+    @apply rounded-full text-2xl p-2 shadow-md transition-all ease-in-out;
+  }
+
+  .navMenu {
+    @apply shadow-sm shadow-teal-700 active:bg-teal-800 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 transition-all duration-300 hover:text-teal-200;
+  }
+
+}
