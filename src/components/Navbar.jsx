@@ -59,16 +59,16 @@ const Navbar = () => {
   }
 
   return (
-    <aside className="navbar w-[20dvw] h-screen flex flex-col justify-between  bg-[#e9e9e0] dark:bg-slate-900 shadow-xl shadow-teal-300 text-teal-800 dark:text-teal-300">
+    <aside className="fixed top-0 bottom-0 left-0 navbar w-[20dvw] h-screen flex flex-col justify-between  bg-[#e9e9e0] dark:bg-slate-900 shadow-xl shadow-teal-300 text-teal-800 dark:text-teal-300">
 
       <div className="flex flex-col gap-5">
         {/* ----------SIDEBAR HEADER---------- */}
 
         <div className="sidebarheader flex flex-col justify-center items-center my-10 gap-2">
-          <div className="profilePic">
-            <img className="rounded-full size-40 object-cover" src={MY_INFO.picture} alt="image" />
+          <div className="imgRing">
+            <img className="imgInner" src={MY_INFO.picture} alt="image" />
           </div>
-          <h1 className="text-2xl ">Nusfa Jahan Ikra</h1>
+          <h1 className="text-2xl ">Lorem Ipsum</h1>
           <p className=" ">Hello! I'm a FrontEnd Web Developer.</p>
         </div>
 
@@ -76,38 +76,38 @@ const Navbar = () => {
 
         <ul className="p-5 flex flex-col gap-3 ">
           <NavLink to='/'>
-            <a className={`navMenu`} href="#">
+            <p className={`navMenu`}>
               <span className="navIcon "><IoHomeOutline /></span>
               <span className="">Home</span>
-            </a>
+            </p>
           </NavLink>
 
           <NavLink>
-            <a className=" navMenu" href="#">
+            <p className=" navMenu">
               <span className="navIcon"><LuUserRound /></span>
               <span>About Me</span>
-            </a>
+            </p>
           </NavLink>
 
           <NavLink>
-            <a className=" navMenu" href="#">
+            <p className=" navMenu">
               <span className="navIcon"><CiGrid42 /></span>
               <span>Projects</span>
-            </a>
+            </p>
           </NavLink>
           <NavLink>
 
-            <a className=" navMenu" href="#">
+            <p className=" navMenu">
               <span className="navIcon"><MdOutlineVerifiedUser /></span>
               <span>Certifications</span>
-            </a>
+            </p>
           </NavLink>
 
           <NavLink>
-            <a className=" navMenu" href="#">
+            <p className=" navMenu">
               <span className="navIcon"><LuPhone /></span>
               <span>Contact</span>
-            </a>
+            </p>
           </NavLink>
 
         </ul>

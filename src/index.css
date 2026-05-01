@@ -8,6 +8,8 @@ body,
   height: 100%;
 }
 
+/* ---------------------NAVBAR STYLES-------------------- */
+
 @keyframes NavbarHoverEffect {
   0% {
     background-position: 0% 50%;
@@ -49,37 +51,55 @@ body,
   z-index: 1;
 }
 
-.profilePic {
-  background: #062c3d;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  height: 180px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ---------------------GLOWING IMAGE STYLES-------------------- */
+
+@keyframes spinRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.profilePic::before,
-.profilePic::after {
+.imgRing {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 9999px;
+  padding: 2px;
+  display: inline-block;
+}
+
+.imgRing::before {
   content: "";
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: conic-gradient(from 0deg at center,
-      #0F4359,
-      #17c99d,
-      #1a8469,
-      #062c3d);
-  z-index: -2;
-  padding: 2px
-}
+  inset: -1px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg,
+      #0B4F4A,
+      #83e0cd,
+      #4fbda7,
+      #0B4F4A);
 
-.profilePic::after {
-  z-index: 1;
   filter: blur(10px);
-
+  animation: spinRing 4s linear infinite;
+  z-index: 0;
 }
+
+.imgInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ---------------------CUSTOM CLASSES-------------------- */
 
 @layer components {
   .navIcon {
