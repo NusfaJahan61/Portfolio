@@ -59,7 +59,7 @@ const Navbar = () => {
   }
 
   return (
-    <aside className="fixed top-0 bottom-0 left-0 navbar w-[20dvw] h-screen flex flex-col justify-between  bg-[#e9e9e0] dark:bg-slate-900 shadow-xl shadow-teal-300 text-teal-800 dark:text-teal-300">
+    <aside className="fixed top-0 bottom-0 left-0 hidden md:block navbar w-[20dvw] h-screen flex-col justify-between  bg-[#F0F0F3] dark:bg-slate-900 shadow-2xl dark:shadow-xl dark:shadow-teal-200  text-teal-800 dark:text-teal-300">
 
       <div className="flex flex-col gap-5">
         {/* ----------SIDEBAR HEADER---------- */}
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="imgRing">
             <img className="imgInner" src={MY_INFO.picture} alt="image" />
           </div>
-          <h1 className="text-2xl ">Lorem Ipsum</h1>
+          <h1 className="text-2xl ">Nusfa Jahan Ikra</h1>
           <p className=" ">Hello! I'm a FrontEnd Web Developer.</p>
         </div>
 
@@ -76,7 +76,7 @@ const Navbar = () => {
 
         <ul className="p-5 flex flex-col gap-3 ">
           <NavLink to='/'>
-            <p className={`navMenu`}>
+            <p className={`navMenu `}>
               <span className="navIcon "><IoHomeOutline /></span>
               <span className="">Home</span>
             </p>
@@ -115,7 +115,7 @@ const Navbar = () => {
       </div>
 
       {/* -------MODE TOGGLE------- */}
-      <div className="bg-[#dadad1] dark:bg-slate-800 flex flex-row items-center justify-between s px-5 ">
+      <div className="bg-[#d4d4d6] dark:bg-slate-800 flex flex-row items-center justify-between absolute bottom-0 w-full px-5 ">
 
         <div className="flex items-center">
           <button className="bg-[#e9e9e0] dark:bg-slate-900 font-bold rounded-full text-2xl p-3 m-2 shadow-md  hover:scale-105 transition-all ease-in-out cursor-pointer active:bg-neutral-400" onClick={toggleTheme}>

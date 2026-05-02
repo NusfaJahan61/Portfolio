@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       <Navbar />
       <div className="ml-0 md:ml-[20dvw]">
         <Contact />
+        <Footer />
       </div>
 
     </main>

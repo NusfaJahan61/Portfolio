@@ -110,4 +110,7 @@ body,
     @apply shadow-sm shadow-teal-700 active:bg-teal-800 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 transition-all duration-300 hover:text-teal-200;
   }
 
+  .socialIcons {
+    @apply p-3 rounded-xl bg-[#f0f0f3] dark:bg-slate-800 dark:text-teal-500 hover:scale-110 hover:text-teal-500 transition;
+  }
 }
