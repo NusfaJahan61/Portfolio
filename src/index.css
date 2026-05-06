@@ -107,7 +107,7 @@ body,
   }
 
   .navMenu {
-    @apply shadow-sm shadow-teal-700 active:bg-teal-800 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 transition-all duration-300 hover:text-teal-200;
+    @apply shadow-sm shadow-teal-700 active:bg-teal-800 active:text-teal-100 active:shadow-teal-300 flex flex-row items-center justify-start gap-3 rounded-full p-3 transition-all duration-300 hover:text-teal-200 w-auto;
   }
 
   .socialIcons {

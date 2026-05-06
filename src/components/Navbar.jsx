@@ -56,6 +56,7 @@ const Navbar = () => {
   const [minimize, setMinimize] = useState(false);
   const toggleMinimize = () => {
     setMinimize(!minimize)
+    document.documentElement.classList.toggle("sbm", !minimize)
   }
 
   return (
@@ -78,7 +79,7 @@ const Navbar = () => {
           <NavLink to='/'>
             <p className={`navMenu `}>
               <span className="navIcon "><IoHomeOutline /></span>
-              <span className="">Home</span>
+              <span className="sbm:hidden flex">Home</span>
             </p>
           </NavLink>
 
@@ -125,7 +126,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex justify-end m-3">
-          <button className="text-xl p-3 rounded-full bg-[#e9e9e0] dark:bg-slate-900 cursor-pointer" onClick={toggleMinimize}>{!minimize ? <FaChevronLeft /> : <FaChevronRight />}</button>
+          <button onClick={toggleMinimize} className="text-xl p-3 rounded-full bg-[#e9e9e0] dark:bg-slate-900 cursor-pointer">
+            {!minimize ? <FaChevronLeft /> : <FaChevronRight />}
+          </button>
         </div>
       </div>
 

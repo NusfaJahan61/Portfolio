@@ -13,7 +13,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
 
-          <p>© {new Date().getFullYear()} YourName</p>
+          <p>© {new Date().getFullYear()} Nusfa Jahan Ikra</p>
 
           <div className="flex justify-center gap-5">
 
